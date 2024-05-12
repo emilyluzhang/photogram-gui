@@ -1,0 +1,64 @@
+<h1> Photo Details </h1>
+<dl>
+  <dt>
+    Image
+  </dt>
+  <dd>
+    <img src = "<%= @photo.image %>">
+  </dd>
+
+  <dt>
+    Caption
+  </dt>
+  <dd>
+    <%= @photo.caption %>
+  </dd>
+
+  <dt>
+    Owner
+  </dt>
+  <dd>
+    <%= @photo.poster.username %>
+  </dd>
+
+  <dt>
+    Posted
+  </dt>
+  <dd>
+    <%= @photo.created_at %>
+  </dd>
+
+  <dt>
+    Edit photo
+  </dt>
+  <dd>
+    Insert a form here
+  </dd>
+  <dt>
+    Delete photo
+  </dt>
+  <dd>
+    Insert the link here
+  </dd>
+</dl>
+
+<h2> Comments </h2>
+
+<table>
+<tr>
+  <th> Commenter </th>
+  <th> Comment </th>
+  <th> Posted </th>
+</tr>
+
+<% @photo.comments.each do |a_comment| %>
+  <tr>
+    <td> <%= a_comment.commenter.username %> </td>
+    <td> <%= a_comment.body %> </td>
+    <td> <%= a_comment.created_at %> </td>
+  </tr>
+<% end %>
+
+</table>
+
+<h3> Add a new comment </h3>

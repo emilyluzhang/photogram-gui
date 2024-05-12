@@ -43,7 +43,7 @@
       Caption
     </label>
 
-    <input type="text" id="author_id_box" name="query_caption" value="<%= @photo.caption %>">
+    <textarea id="author_id_box" name="query_caption"><%= @photo.caption %>"></textarea>
 
   <button>
     Update photo
@@ -99,7 +99,7 @@
       Caption
     </label>
 
-    <input type="text" id="comment_box" name="query_comment" placeholder="Enter a comment...">
+    <textarea id="comment_box" name="query_comment" placeholder="Enter a comment..."></textarea>
 
   <button>
     Add comment

@@ -12,7 +12,16 @@
     Edit user
   </dt>
   <dd>
-    Insert a form here
+    <form action="/update_user/@user.username" method="post">
+    <label for="user_update_box">
+      Username
+    </label>
+    <input type="text" id="user_update_box" name="query_username" value = "<%=@user.username%>">
+
+  <button>
+    Update user
+  </button>
+</form>
   </dd>
 </dl>
 

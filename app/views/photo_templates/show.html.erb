@@ -32,13 +32,33 @@
     Edit photo
   </dt>
   <dd>
-    Insert a form here
+    <form action="/update_photo/@photo.id" method="post">
+    <label for="photo_box">
+      Image
+    </label>
+
+    <input type="text" id="photo_box" name="query_image" value="<%= @photo.image %>">
+
+    <label for="author_id_box">
+      Caption
+    </label>
+
+    <input type="text" id="author_id_box" name="query_caption" value="<%= @photo.caption %>">
+
+  <button>
+    Update photo
+  </button>
+</form>
   </dd>
   <dt>
     Delete photo
   </dt>
   <dd>
-    Insert the link here
+    <div>
+  <a href="/delete_photo/<%= @photo.id %>">
+    Delete photo
+  </a>
+</div>
   </dd>
 </dl>
 
@@ -62,3 +82,26 @@
 </table>
 
 <h3> Add a new comment </h3>
+  <form action="/insert_comment" method="post">
+    <label for="photo_id_box">
+      Photo ID
+    </label>
+
+    <input type="text" id="photo_id_box" name="query_photo_id" value="<%= @photo.id %>">
+
+    <label for="author_id_box">
+      Author ID
+    </label>
+
+    <input type="text" id="author_id_box" name="query_author" placeholder="Enter your author ID">
+
+    <label for="comment_box">
+      Caption
+    </label>
+
+    <input type="text" id="comment_box" name="query_comment" placeholder="Enter a comment...">
+
+  <button>
+    Add comment
+  </button>
+</form>

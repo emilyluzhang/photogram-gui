@@ -32,7 +32,7 @@
     Edit photo
   </dt>
   <dd>
-    <form action="/update_photo/@photo.id" method="post">
+    <form action="/update_photo/<%=@photo.id %>" method="post">
     <label for="photo_box">
       Image
     </label>
@@ -43,7 +43,7 @@
       Caption
     </label>
 
-    <textarea id="author_id_box" name="query_caption"><%= @photo.caption %>"></textarea>
+    <textarea id="author_id_box" name="query_caption"><%= @photo.caption %></textarea>
 
   <button>
     Update photo
@@ -82,7 +82,7 @@
 </table>
 
 <h3> Add a new comment </h3>
-  <form action="/insert_comment" method="post">
+  <form action="/add_comment" method="post">
     <label for="photo_id_box">
       Photo ID
     </label>

@@ -24,13 +24,10 @@ class UserController < ApplicationController
 
     update_user = User.where({:username => the_user}).at(0)
     update_user.username = params.fetch("query_username")
-
     if update_user.valid?
       update_user.save
-      redirect_to("/users/#{update_user.username}", { :notice => "Username updated successfully."} )
-    else
-      redirect_to("/users/#{the_user}", { :alert => "Username failed to update successfully." })
     end
-    redirect_to("/users/#{update_user.username}")
+    username = User.where({:username => update_user.username}).at(0)
+    redirect_to("/users/#{username.username}")
   end 
 end 
